@@ -45,7 +45,7 @@ Podemos considerar que este projeto tem um parte:
 ### Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com), [Bootstrap](https://getbootstrap.com/).
+[Git](https://git-scm.com), [Bootstrap](https://getbootstrap.com/) e o compilador do TypeScript instalado através do node.
 Além disto é bom ter um editor para trabalhar com o código como _VSCode_
 
 ## Clonando o projeto
