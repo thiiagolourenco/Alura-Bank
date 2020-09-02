@@ -1,9 +1,8 @@
-##README EM CRIAÇÃO !! APENAS PEGUEI O TEMPLATE QUE USO NOS MEUS PROJETOS :)
+<h1 align="center">Alura bank</h1>
 
 <p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-tecnologias">Como rodar o projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-como-rodar-o-projeto">Como contribuir</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-agradecimentos">Agradecimentos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -16,9 +15,9 @@
 
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=7159c1&labelColor=000000">
 
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/thiiagolourenco/Proffy?color=%2304D361">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/thiiagolourenco/Alura-Bank?color=%2304D361">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/thiiagolourenco/Proffy">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/thiiagolourenco/Alura-Bank">
 
 </p>
 
@@ -28,40 +27,25 @@
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-- [Node.js](https://nodejs.org/en/) (Back-end),
-- JavaScript, HTML e CSS (Front-end).
+- TypeScript, HTML e CSS,
+- [Bootstrap](https://getbootstrap.com/).
 
 ## 💻 Projeto
 
-**Proffy** - Plataforma online que conecta alunos com professores.
-
-## 🔖 Layout
-
-Você pode visualizar o layout do projeto no Figma, ele está dividido em duas versões:
-
-- <div style="display:flex;align-items:center;">
-      Layout do projeto web <img src="https://img.shields.io/badge/-Figma-rebeccapurple?&logo=Figma&logoColor=white&link=https://www.notion.so/Layout-Proffy-3d5f45f54ec54ef9b2103565b7cce4e1)" style="margin-left:8px;"/>
-  </div>
-
-- <div style="display:flex;align-items:center;margin-top:12px;">
-      Layout do projeto mobile <img src="https://img.shields.io/badge/-Figma-purple?&logo=Figma&logoColor=white&link=https://www.notion.so/Layout-Proffy-3d5f45f54ec54ef9b2103565b7cce4e1)" style="margin-left:8px;"/>
-  </div>
+**Alura bank** - Plataforma online que permite os usuários a fazer negociações bancárias.
 
 ## 🚀 Como rodar o projeto
 
-Podemos considerar este projeto como sendo divido em duas partes:
+Podemos considerar que este projeto tem um parte:
 
-1. Back-End,
-2. Front-End.
+1. Front-End.
 
-💡 Tanto o Front-End quanto o Back-end estão na divididos na pasta src e public.
-<br>
-💡 O Back-end precisa está executando para que tudo funcione bem.
+💡 O Back-end seria os scripts que foram criados.
 
 ### Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/).
+[Git](https://git-scm.com), [Bootstrap](https://getbootstrap.com/).
 Além disto é bom ter um editor para trabalhar com o código como _VSCode_
 
 ## Clonando o projeto
@@ -70,53 +54,10 @@ Comece realizando um clone deste projeto, se preferir você também pode baixar 
 
 ```bash
 # Clone este repositório
-$ git clone https://github.com/thiiagolourenco/Proffy
+$ git clone https://github.com/thiiagolourenco/Alura-Bank
 
-# Acesse a pasta do projeto no seu terminal/cmd
-$ cd proffy
-```
-
-## Rodando o Back-end (servidor)
-
-```bash
-# Vá para a pasta da aplicação Front-End
-$ cd server
-
-# Instale as dependências
-$ npm install
-# Ou use Yarn se preferir
-$ yarn
-
-# Rode as migrations do banco de dados
-$ npm run knex:migrate
-# Ou use Yarn
-$ yarn knex:migrate
-
-# Execute a aplicação em modo de desenvolvimento
-$ npm run start
-# Ou use Yarn se preferir
-$ yarn start
-
-# A aplicação será aberta na porta:5500
-```
-
-### Rodando a aplicação
-
-```bash
-# Vá para a pasta da aplicação Front-End
-$ cd web
-
-# Instale as dependências
-$ npm install
-# Ou use Yarn se preferir
-$ yarn
-
-# Execute a aplicação em modo de desenvolvimento
-$ npm run start
-# Ou use Yarn se preferir
-$ yarn start
-
-# A aplicação será aberta na porta:5500 - acesse http://localhost:5500
+# Acesse a pasta do projeto no seu terminal/cmd e abra o index.html no seu navegador
+$ cd Alura-Bank
 ```
 
 ## 🤔 Como contribuir
@@ -152,8 +93,4 @@ Feito por Thiago Lourenço
 
 # Observações
 
-Obs.: Existem vários comentários dentro do código, pois esse projeto também foi um projeto de estudo teórico.
-
-Obs².: Codamos utilizando a ideia do Mobile first.
-
-Obs³.: Front-end (HTML, CSS e JS) -> Back-end(NODE.JS e GITBASH) -> Banco de dados (SQLITE). 
+Obs.: Este projeto foi um projeto de estudo teórico da linguagem TypeScript. 
