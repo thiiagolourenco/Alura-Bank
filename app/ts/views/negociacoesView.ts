@@ -1,14 +1,4 @@
-class NegociacoesView {
-
-    private elemento: Element;
-
-    constructor(seletor: string) {
-        this.elemento = document.querySelector(seletor);
-    }
-
-    upData(negociacoes: Negociacoes): void {
-        this.elemento.innerHTML = this.template(negociacoes);
-    }
+class NegociacoesView extends View<Negociacoes> {
 
     template(negociacoes: Negociacoes): string {
 
