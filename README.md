@@ -28,6 +28,7 @@
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - TypeScript, HTML e CSS,
+- JQuery,
 - [Bootstrap](https://getbootstrap.com/).
 
 ## 💻 Projeto
