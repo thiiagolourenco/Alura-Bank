@@ -1,8 +1,8 @@
 class NegociacaoController {
     constructor() {
         this.negociacoes = new Negociacoes();
-        this.negociacoesView = new NegociacoesView("#negociacoesView");
-        this.mensagemView = new MensagemView("#mensagemView");
+        this.negociacoesView = new Views.NegociacoesView("#negociacoesView");
+        this.mensagemView = new Views.MensagemView("#mensagemView");
         this._inputData = $("#data");
         this._inputQuantidade = $("#quantidade");
         this._inputValor = $("#valor");
