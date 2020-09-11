@@ -23,6 +23,13 @@ export class NegociacaoController {
 
         event.preventDefault();
 
+        let data = new Date(this._inputData.val().replace(/-/g, ','));
+        if (data.getDay() == diaSemana.sabado || data.getDay() == diaSemana.domingo) {
+
+            this.mensagemView.upData('Somente negociações em dias úteis, por favor!');
+            return
+        }
+
         const negociacao = new Negociacao(
             new Date(this._inputData.val().replace(/-/g, ',')), //Troco os - por ,
             parseInt(this._inputQuantidade.val()),
@@ -32,4 +39,14 @@ export class NegociacaoController {
         this.negociacoesView.upData(this.negociacoes);
         this.mensagemView.upData("Negociação adicionada com sucesso!");
     }
+}
+
+enum diaSemana {
+    domingo,
+    segunda,
+    terca,
+    quarta,
+    quinta,
+    sexta,
+    sabado
 }
