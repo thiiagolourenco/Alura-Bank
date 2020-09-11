@@ -1,8 +1,12 @@
-class NegociacaoController {
+import { Negociacao } from '../models/negociacao';
+import { Negociacoes } from '../models/negociacoes';
+import { MensagemView } from '../views/mensagemView';
+import { NegociacoesView } from '../views/negociacoesView';
+export class NegociacaoController {
     constructor() {
         this.negociacoes = new Negociacoes();
-        this.negociacoesView = new Views.NegociacoesView("#negociacoesView");
-        this.mensagemView = new Views.MensagemView("#mensagemView");
+        this.negociacoesView = new NegociacoesView("#negociacoesView");
+        this.mensagemView = new MensagemView("#mensagemView");
         this._inputData = $("#data");
         this._inputQuantidade = $("#quantidade");
         this._inputValor = $("#valor");

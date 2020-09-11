@@ -1,35 +1,36 @@
-namespace Views {
-    export class NegociacoesView extends Views.View<Negociacoes> {
+import { View } from './view';
+import { Negociacoes } from '../models/negociacoes';
 
-        template(negociacoes: Negociacoes): string {
+export class NegociacoesView extends View<Negociacoes> {
 
-            return `
-            <table class="table table-hover table-bordered">
-                <thead>
+    template(negociacoes: Negociacoes): string {
+
+        return `
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>DATA</th>
+                    <th>QUANTIDADE</th>
+                    <th>VALOR</th>
+                    <th>VOLUME</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                ${negociacoes.paraArray().map(negociacao => `
                     <tr>
-                        <th>DATA</th>
-                        <th>QUANTIDADE</th>
-                        <th>VALOR</th>
-                        <th>VOLUME</th>
-                    </tr>
-                </thead>
+                        <td>${negociacao.data.getDate()}/${negociacao.data.getMonth() + 1}/${negociacao.data.getFullYear()}</td>
+                        <td>${negociacao.quantidade}</td>
+                        <td>${negociacao.valor}</td>
+                        <td>${negociacao.volume}</td>
+                    </tr>                        
+                `).join('')} 
+            </tbody>
 
-                <tbody>
-                    ${negociacoes.paraArray().map(negociacao => `
-                        <tr>
-                            <td>${negociacao.data.getDate()}/${negociacao.data.getMonth() + 1}/${negociacao.data.getFullYear()}</td>
-                            <td>${negociacao.quantidade}</td>
-                            <td>${negociacao.valor}</td>
-                            <td>${negociacao.volume}</td>
-                        </tr>                        
-                    `).join('')} 
-                </tbody>
-
-                <tfoot>
-                </tfoot>
-            </table>               
-            `;
-        }
-
+            <tfoot>
+            </tfoot>
+        </table>               
+        `;
     }
+
 }
