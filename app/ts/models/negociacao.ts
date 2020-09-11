@@ -1,16 +1,7 @@
 export class Negociacao {
 
-    constructor(private _data: Date, private _quantidade: number, private _valor: number) {
-    }
-
-    get data() {
-
-        return this._data;
-    }
-
-    get quantidade() {
-
-        return this._quantidade;
+    //readonly permite apenas a leitura do atributo, diferente do private q proíbe tudo.
+    constructor(readonly data: Date, readonly quantidade: number, private _valor: number) {
     }
 
     get valor() {
@@ -20,7 +11,7 @@ export class Negociacao {
 
     get volume() {
 
-        return this._quantidade * this._valor;
+        return this.quantidade * this._valor;
     }
 }
 

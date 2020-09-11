@@ -7,7 +7,7 @@ export abstract class View<T> { //Classe n pode ser instanciada e utilização d
 
     protected elemento: JQuery; //O protected permite o pai e os filhos terem acesso.
 
-    constructor(seletor: string) {
+    constructor(seletor: string) {// Um parâmetro opcional é dado por: nome?: tipo
         this.elemento = $(seletor);
     }
 

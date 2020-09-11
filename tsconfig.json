@@ -3,9 +3,10 @@
         "target": "es6",
         "outDir": "app/js",
         "noEmitOnError": true,
-        "noImplicitAny": true,
-        "removeComments": true,
-        "module": "system"
+        "noImplicitAny": true, //n aceita any por default quando n damos tipo
+        "removeComments": true, //remove os comentários do js gerado
+        "module": "system",
+        "strictNullChecks": true // n permiter aplicar null ou undefined a uma variáveis. a não ser q o TIPO da variável é null
     },
     "include": [
         "app/ts/**/*"
