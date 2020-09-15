@@ -3,20 +3,24 @@ import { Negociacoes } from '../models/negociacoes';
 import { MensagemView } from '../views/mensagemView';
 import { NegociacoesView } from '../views/negociacoesView';
 import { logarTempoDeExecucao } from '../helpers/decorators/logarTempoDeExecucao';
+import { domInject } from '../helpers/decorators/domInject';
 
 export class NegociacaoController {
 
+    @domInject("#data")//A ideia aqui é criar um lazy loading
     private _inputData: JQuery;
+
+    @domInject("#quantidade")
     private _inputQuantidade: JQuery;
+
+    @domInject("#valor")
     private _inputValor: JQuery;
+
     private negociacoes: Negociacoes = new Negociacoes();
     private negociacoesView = new NegociacoesView("#negociacoesView");
     private mensagemView = new MensagemView("#mensagemView");
 
     constructor() {
-        this._inputData = $("#data");
-        this._inputQuantidade = $("#quantidade");
-        this._inputValor = $("#valor");
         this.negociacoesView.upData(this.negociacoes);
     }
 
