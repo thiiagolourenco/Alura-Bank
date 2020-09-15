@@ -1,3 +1,6 @@
+
+//Estrutura de um decorator de GET.
+//(Podemos criar um decorator de classe tb q nos dá acesso a um construtor da classe.)
 export function domInject(seletor: string) {
 
     return function (target: any, key: string) {
