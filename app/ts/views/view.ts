@@ -3,6 +3,8 @@
 //namespace Views { //namespace é usado para facilitar na programação. 
 //Aqui quando eu faço Views. eu vejo todas as possíveis views do projeto. Eu crio o módulo de views q tem todas as view !
 //Posso criar um atalho para n escrever Views.View por exemplo. import nomeEscolhido = Views.View; 
+import { logarTempoDeExecucao } from '../helpers/decorators/logarTempoDeExecucao';
+
 export abstract class View<T> { //Classe n pode ser instanciada e utilização de Generics!
 
     protected elemento: JQuery; //O protected permite o pai e os filhos terem acesso.
@@ -11,6 +13,7 @@ export abstract class View<T> { //Classe n pode ser instanciada e utilização d
         this.elemento = $(seletor);
     }
 
+    @logarTempoDeExecucao()
     upData(negociacoes: T): void {
         this.elemento.html(this.template(negociacoes));
     }

@@ -6,7 +6,8 @@
         "noImplicitAny": true, //n aceita any por default quando n damos tipo
         "removeComments": true, //remove os comentários do js gerado
         "module": "system",
-        "strictNullChecks": true // n permiter aplicar null ou undefined a uma variáveis. a não ser q o TIPO da variável é null
+        "strictNullChecks": true, // n permiter aplicar null ou undefined a uma variáveis. a não ser q o TIPO da variável é null
+        "experimentalDecorators": true //Para que se possa usar os decorators no projeto
     },
     "include": [
         "app/ts/**/*"

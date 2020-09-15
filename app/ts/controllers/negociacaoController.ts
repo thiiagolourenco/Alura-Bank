@@ -2,6 +2,7 @@ import { Negociacao } from '../models/negociacao';
 import { Negociacoes } from '../models/negociacoes';
 import { MensagemView } from '../views/mensagemView';
 import { NegociacoesView } from '../views/negociacoesView';
+import { logarTempoDeExecucao } from '../helpers/decorators/logarTempoDeExecucao';
 
 export class NegociacaoController {
 
@@ -19,6 +20,7 @@ export class NegociacaoController {
         this.negociacoesView.upData(this.negociacoes);
     }
 
+    @logarTempoDeExecucao()
     adiciona(event: Event) {
 
         event.preventDefault();
