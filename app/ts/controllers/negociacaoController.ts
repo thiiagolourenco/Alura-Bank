@@ -6,6 +6,7 @@ import { NegociacoesView } from '../views/negociacoesView';
 import { logarTempoDeExecucao } from '../helpers/decorators/logarTempoDeExecucao';
 import { domInject } from '../helpers/decorators/domInject';
 import { throttle } from '../helpers/decorators/throttle';
+import { NegociacaoService } from '../services/negociacaoService';
 
 export class NegociacaoController {
 
@@ -21,6 +22,8 @@ export class NegociacaoController {
     private negociacoes: Negociacoes = new Negociacoes();
     private negociacoesView = new NegociacoesView("#negociacoesView");
     private mensagemView = new MensagemView("#mensagemView");
+
+    //private negociacaoService = new NegociacaoService();
 
     constructor() {
         this.negociacoesView.upData(this.negociacoes);
@@ -59,6 +62,14 @@ export class NegociacaoController {
                 throw new Error(res.statusText);//Pega possíveis erros, como: 500...
             }
         }
+
+        /* this.negociacaoService //Isso era pra colocar o acesso a API em um serviço separado.
+            .obterNegociacoes(isOK)
+            .then(negociacoes => {
+                negociacoes.forEach(negociacao => 
+                    this.negociacoes.adiciona(negociacao));
+                this.negociacoesView.update(this.negociacoes);
+            });  */
 
         fetch('http://localhost:8080/dados')
             .then(res => isOK(res))
