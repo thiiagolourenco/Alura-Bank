@@ -5,8 +5,8 @@ import { MensagemView } from '../views/mensagemView';
 import { NegociacoesView } from '../views/negociacoesView';
 import { logarTempoDeExecucao } from '../helpers/decorators/logarTempoDeExecucao';
 import { domInject } from '../helpers/decorators/domInject';
+import { throttle } from '../helpers/decorators/throttle';
 
-let timer: number = 0;
 export class NegociacaoController {
 
     @domInject("#data")//A ideia aqui é criar um lazy loading
@@ -29,7 +29,7 @@ export class NegociacaoController {
     @logarTempoDeExecucao()
     adiciona(event: Event) {
 
-        event.preventDefault();
+        event.preventDefault();//Para n recarregar o form. Se usar o throttle aqui teriamos um erro de funcionamento.
 
         let data = new Date(this._inputData.val().replace(/-/g, ','));
         if (data.getDay() == diaSemana.sabado || data.getDay() == diaSemana.domingo) {
@@ -48,6 +48,7 @@ export class NegociacaoController {
         this.mensagemView.upData("Negociação adicionada com sucesso!");
     }
 
+    @throttle()
     importarDados() {
 
         function isOK(res: Response) {
@@ -59,19 +60,16 @@ export class NegociacaoController {
             }
         }
 
-        timer = setTimeout(() => {
-
-            fetch('http://localhost:8080/dados')
-                .then(res => isOK(res))
-                .then(res => res.json())
-                .then((dados: NegociacaoParcial[]) => {
-                    dados
-                        .map(dado => new Negociacao(new Date(), dado.vezes, dado.montante))
-                        .forEach(negociacao => this.negociacoes.adiciona(negociacao))
-                    this.negociacoesView.upData(this.negociacoes);
-                })
-                .catch(err => console.log(err));
-        }, 500);
+        fetch('http://localhost:8080/dados')
+            .then(res => isOK(res))
+            .then(res => res.json())
+            .then((dados: NegociacaoParcial[]) => {
+                dados
+                    .map(dado => new Negociacao(new Date(), dado.vezes, dado.montante))
+                    .forEach(negociacao => this.negociacoes.adiciona(negociacao));
+                this.negociacoesView.upData(this.negociacoes);
+            })
+            .catch(err => console.log(err.message))
     }
 }
 
