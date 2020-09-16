@@ -6,6 +6,7 @@ import { NegociacoesView } from '../views/negociacoesView';
 import { logarTempoDeExecucao } from '../helpers/decorators/logarTempoDeExecucao';
 import { domInject } from '../helpers/decorators/domInject';
 
+let timer: number = 0;
 export class NegociacaoController {
 
     @domInject("#data")//A ideia aqui é criar um lazy loading
@@ -54,20 +55,23 @@ export class NegociacaoController {
             if (res.ok) {
                 return res;
             } else {
-                throw new Error(res.statusText);
+                throw new Error(res.statusText);//Pega possíveis erros, como: 500...
             }
         }
 
-        fetch('http://localhost:8080/dados')
-            .then(res => isOK(res))
-            .then(res => res.json())
-            .then((dados: NegociacaoParcial[]) => {
-                dados
-                    .map(dado => new Negociacao(new Date(), dado.vezes, dado.montante))
-                    .forEach(negociacao => this.negociacoes.adiciona(negociacao));
-                this.negociacoesView.upData(this.negociacoes);
-            })
-            .catch(err => console.log(err.message))
+        timer = setTimeout(() => {
+
+            fetch('http://localhost:8080/dados')
+                .then(res => isOK(res))
+                .then(res => res.json())
+                .then((dados: NegociacaoParcial[]) => {
+                    dados
+                        .map(dado => new Negociacao(new Date(), dado.vezes, dado.montante))
+                        .forEach(negociacao => this.negociacoes.adiciona(negociacao))
+                    this.negociacoesView.upData(this.negociacoes);
+                })
+                .catch(err => console.log(err));
+        }, 500);
     }
 }
 
