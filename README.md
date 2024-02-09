@@ -80,16 +80,7 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
 
 ---
 
-Feito por Thiago Lourenço
-<br>
-
-<a href="https://www.linkedin.com/in/thiago-lourenço-201053173/">
-  <img alt="Feito por thiiagolourenco" src="https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/thiago-lourenço-201053173/">
-</a>
-
-<a href="https://github.com/thiiagolourenco" style="margin-left: 8px;">
-  <img alt="Feito por thiiagolourenco" src="https://img.shields.io/badge/-GitHub-grey?style=flat&logo=GitHub&logoColor=white&link=https://github.com/thiiagolourenco">
-</a>
+Made with 💜 by Thiago Lourenço [Check out my LinkedIn](https://www.linkedin.com/in/thiiagolourenco)
 
 
 # Observações
